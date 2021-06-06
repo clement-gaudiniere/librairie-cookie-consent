@@ -1,3 +1,7 @@
+<p align="center">
+	<img alt="Logo de la librairie" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/logo.png" width="200" />
+</p>
+
 # librairie-cookie-consent
 This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
