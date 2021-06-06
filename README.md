@@ -13,7 +13,20 @@ In development
 
 ### How to use it?
 
-Once the popupConsent.min.js or popupConsent.js file has been inserted into the page, you can create a popup using the `popupConsent();` function.
+Before starting any manipulation with the library, the CSS file `popupConsent.css`, the file `popupConsent.js` or `popupConsent.min.js`, and the jQuery framework must be included. For example, our `<head>` could look like this:
+``` html
+<head>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="css/popupConsent.css">
+  <script src="js/popupConsent.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title></title>
+</head>
+```
+
+You don't have to include jQuery and `popupConsent.js`/`popupConsent.min.js` between the `<head>` tags, but you must include jquery before `popupConsent.js`/`popupConsent.min.js` and before calling the `popupConsent()` function.
+
+Once these three files are included in our page, , you can create a popup using the `popupConsent();` function.
 The question now is how does this function work ? It's actually quite simple, just create a `cookieConsentOptions` variable with an array, like the example below.
 
 ``` js
@@ -41,3 +54,5 @@ var cookieConsentOptions = {
 }
 popupConsent(cookieConsentOptions);
 ```
+
+
