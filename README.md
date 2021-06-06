@@ -1,17 +1,16 @@
 # librairie-cookie-consent
-Cette librairie légère d'utilisation vous permet de demander l'avis à vos utilisateurs concernant différents paramètres réglables directement dans le code. Pour en savoir plus, voir le fichier README.
-NOTE IMPORTANTE : à utiliser avec jQuery
+This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
 
 <details>
   <summary><b>Exemple</b></summary>
-  Si vous voulez vous rendre compte directement du résultat, télécharger la dernière <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release</a>, et rendez-vous dans le dossier Exemple. Puis éxécuter le fichier index.html.
+  If you want to see the result directly, download the latest <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release</a>, and go to the Example folder. Then run the index.html file.
 </details>
 
 ```
-En développement
+In development
 ```
 
-### Comment l'utiliser ?
+### How to use it?
 
-Une fois le fichier popupConsent.min.js ou popupConsent.js insérer dans la page, vous pouvez créer une popup à l'aide de la fonction `popupConsent();`.
+Once the popupConsent.min.js or popupConsent.js file has been inserted into the page, you can create a popup using the `popupConsent();` function.
