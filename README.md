@@ -6,3 +6,10 @@ NOTE IMPORTANTE : à utiliser avec jQuery
 En développement
 ```
 
+### Comment l'utiliser ?
+
+<details>
+  <summary><b>Exemple</b></summary>
+  Si vous voulez vous rendre compte directement du résultat, télécharger la dernière <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release</a>, et rendez-vous dans le dossier Exemple. Puis éxécuter le fichier index.html.
+</details>
+
