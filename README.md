@@ -1,3 +1,7 @@
+<p align="center">
+	<img alt="Logo de la librairie" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/logo.png" width="200" />
+</p>
+
 # librairie-cookie-consent
 This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
@@ -17,10 +21,10 @@ Before starting any manipulation with the library, the CSS file `popupConsent.cs
 ``` html
 <head>
   <meta charset="utf-8">
-	<link rel="stylesheet" href="css/popupConsent.css">
+  <link rel="stylesheet" href="css/popupConsent.css">
   <script src="js/popupConsent.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<title></title>
+  <title></title>
 </head>
 ```
 
