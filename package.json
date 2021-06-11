@@ -1,0 +1,31 @@
+{
+  "name": "librairie-cookie-consent",
+  "version": "1.0.0",
+  "description": "This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code.",
+  "main": "popupConsent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clement-gaudiniere/librairie-cookie-consent.git"
+  },
+  "keywords": [
+    "javascript",
+    "jquery",
+    "website",
+    "cookie",
+    "webdev",
+    "cookie-consent",
+    "webdevelopment",
+    "cookie-manager",
+    "cookie-banner",
+    "accept-cookies"
+  ],
+  "author": "Clément Gaudinière",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/clement-gaudiniere/librairie-cookie-consent/issues"
+  },
+  "homepage": "https://github.com/clement-gaudiniere/librairie-cookie-consent#readme"
+}
