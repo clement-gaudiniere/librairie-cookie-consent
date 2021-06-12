@@ -21,7 +21,15 @@ In development, your contributions are welcome
 	</p>
 </details>
 
-### How to use it?
+### How to install it ?
+
+You can download the entire library in three different ways:
+- via the library-cookie-consent <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release page</a>. 
+- via NPM : `npm install librairie-cookie-consent`
+- via Bower : <em>Not yet available</em>
+
+
+### How to use it ?
 
 Before starting any manipulation with the library, the CSS file `popupConsent.css`, the file `popupConsent.js` or `popupConsent.min.js`, and the jQuery framework must be included. For example, our `<head>` could look like this:
 ``` html
