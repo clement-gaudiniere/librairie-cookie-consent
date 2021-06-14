@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/clement-gaudiniere/librairie-cookie-consent/issues"
   },
-  "homepage": "https://github.com/clement-gaudiniere/librairie-cookie-consent#readme"
+  "homepage": "https://github.com/clement-gaudiniere/librairie-cookie-consent#readme",
+  "dependencies": {
+    "bower": "^1.8.12"
+  }
 }

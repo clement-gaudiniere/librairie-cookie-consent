@@ -1,24 +1,5 @@
 function popupConsent() {
-  document.body.insertAdjacentHTML('beforeEnd'
-    , '<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>' + cookieConsentOptions[
-      'textPopup'] +
-    '</p></section><section id="configureSection"><table><tr><th><div class="switch checked" id="' +
-    cookieConsentOptions['nameCookieAuthorization1'] + '"><div class="circle" id="' + cookieConsentOptions[
-      'nameCookieAuthorization1'] + 'Circle"></div></div></th><th class="text-switch">' +
-    cookieConsentOptions[
-      'textAuthorization1'] + '</th></tr><tr><th><div class="switch checked" id="' + cookieConsentOptions[
-      'nameCookieAuthorization2'] + '"><div class="circle" id="' + cookieConsentOptions[
-      'nameCookieAuthorization2'] +
-    'Circle"></div></div></th><th class="text-switch">' + cookieConsentOptions['textAuthorization2'] +
-    '</th></tr><tr><th><div class="switch checked" id="' + cookieConsentOptions['nameCookieAuthorization3'] +
-    '"><div class="circle" id="' + cookieConsentOptions['nameCookieAuthorization3'] +
-    'Circle"></div></div></th><th class="text-switch">' + cookieConsentOptions['textAuthorization3'] +
-    '</th></tr></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>' +
-    cookieConsentOptions['textButtonAccept'] +
-    '</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>' +
-    cookieConsentOptions['textButtonConfigure'] +
-    '</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>' +
-    cookieConsentOptions['textButtonSave'] + '</button></div></div><div id="backgroundPopup"></div>');
+   document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[0].textAuthorization+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[1].textAuthorization+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[2].textAuthorization+'</th></tr></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
   //--------------Switch button-----------------
   $(".switch")
     .click(function () {

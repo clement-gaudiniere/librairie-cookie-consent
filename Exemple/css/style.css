@@ -841,7 +841,11 @@ body {
   text-align: left;
 }
 .popup #configureSection table .text-switch {
-  padding-left: 5%;
-  font-size: 19px;
-  font-weight: 100;
+    padding: 0 0 0 1rem;
+    font-size: 19px;
+    font-weight: 100;
+}
+.popup #configureSection table tr {
+    display: block;
+    padding: 4px;
 }

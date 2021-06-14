@@ -9,7 +9,7 @@
 	<script src="js/jquery.min.js"></script>
 <script>
 		function popupConsent() {
-		  document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions['textPopup']+'</p></section><section id="configureSection"><table><tr><th><div class="switch checked" id="'+cookieConsentOptions['nameCookieAuthorization1']+'"><div class="circle" id="'+cookieConsentOptions['nameCookieAuthorization1']+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions['textAuthorization1']+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions['nameCookieAuthorization2']+'"><div class="circle" id="'+cookieConsentOptions['nameCookieAuthorization2']+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions['textAuthorization2']+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions['nameCookieAuthorization3']+'"><div class="circle" id="'+cookieConsentOptions['nameCookieAuthorization3']+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions['textAuthorization3']+'</th></tr></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions['textButtonAccept']+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions['textButtonConfigure']+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions['textButtonSave']+'</button></div></div><div id="backgroundPopup"></div>');
+		  document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[0].textAuthorization+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[1].textAuthorization+'</th></tr><tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[2].textAuthorization+'</th></tr></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
 		  //--------------Switch button-----------------
 	    $(".switch").click(function(){
 	      let idSwitch = "#" + $(this).attr('id');
@@ -94,24 +94,24 @@
 	        $(popupConsent).fadeOut(1000);
 	        document.getElementById("backgroundPopup").classList.remove('background-popup');
 	        // Insérer les cookies
-	        if(!$('#'+cookieConsentOptions['nameCookieAuthorization1']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization1']+'=false; path=/; expires=' + date;
+	        if(!$('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=false; path=/; expires=' + date;
 	        }
-	        if($('#'+cookieConsentOptions['nameCookieAuthorization1']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization1']+'=true; path=/; expires=' + date;
+	        if($('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=true; path=/; expires=' + date;
 	        }
-	        if(!$('#'+cookieConsentOptions['nameCookieAuthorization2']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization2']+'=false; path=/; expires=' + date;
+	        if(!$('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=false; path=/; expires=' + date;
 	          (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
 	        }
-	        if($('#'+cookieConsentOptions['nameCookieAuthorization2']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization2']+'=true; path=/; expires=' + date;
+	        if($('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=true; path=/; expires=' + date;
 	        }
-	        if(!$('#'+cookieConsentOptions['nameCookieAuthorization3']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization3']+'=false; path=/; expires=' + date;
+	        if(!$('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=false; path=/; expires=' + date;
 	        }
-	        if($('#'+cookieConsentOptions['nameCookieAuthorization3']).hasClass('checked')){
-	          document.cookie = cookieConsentOptions['nameCookieAuthorization3']+'=true; path=/; expires=' + date;
+	        if($('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
+	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=true; path=/; expires=' + date;
 	        }
 	        document.cookie = 'popupConsent=true; path=/; expires=' + date;
 	      });
@@ -119,25 +119,28 @@
 		}
 	var cookieConsentOptions = {
 		// Cookie usage prevention text
-		'textPopup': 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
+		textPopup: 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
 		// The text of the accept button
-		'textButtonAccept' : 'Accept all',
+		textButtonAccept : 'Accept all',
 		// The text of the configure my options button
-		'textButtonConfigure' : 'Configuring choices',
+		textButtonConfigure : 'Configuring choices',
 		// The text of the save my options button
-		'textButtonSave' : 'Save choices',
+		textButtonSave : 'Save choices',
 		// The text of the first parameter that the user can define in the "configuration" section.
-		'textAuthorization1': 'Allow access to geolocation data',
-		// The cookie name of the first authorization 
-		'nameCookieAuthorization1': 'autoriseGeolocation',
-		// The text of the second parameter that the user can define in the "configuration" section.
-		'textAuthorization2': 'Allow personalised ads and content, ad measurement and audience analysis.',
-		// The cookie name of the second authorization 
-		'nameCookieAuthorization2': 'targetedAdvertising',
-		// The text of the third parameter that the user can define in the "configuration" section.
-		'textAuthorization3': 'Storing and/or accessing information on a device',
-		// The cookie name of the third authorization 
-		'nameCookieAuthorization3': 'cookieConsent'
+		authorization: [
+			{
+				textAuthorization: 'Allow access to geolocation data',
+				nameCookieAuthorization: 'autoriseGeolocation'
+			},
+			{
+				textAuthorization: 'Allow personalised ads and content, ad measurement and audience analysis',
+				nameCookieAuthorization: 'targetedAdvertising'
+			},
+			{
+				textAuthorization: 'Storing and/or accessing information on a device',
+				nameCookieAuthorization: 'cookieConsent'
+			}
+		]
 	}
 	popupConsent(cookieConsentOptions);
 
