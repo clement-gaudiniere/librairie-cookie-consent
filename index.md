@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+<p align="center">
+	<img alt="Logo de la librairie" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/logo.png" width="200" />
+</p>
 
-You can use the [editor on GitHub](https://github.com/clement-gaudiniere/librairie-cookie-consent/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# librairie-cookie-consent
+This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Demo](https://clement-gaudiniere.github.io/librairie-cookie-consent/)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+In development, your contributions are welcome
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<details>
+  <summary><b>Exemple</b></summary>
+	<p>If you want to see the result directly, download the latest <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release</a>, and go to the Example folder. Then run the index.html file. You can see below the popup of the library, below, of course, the style is fully configurable in the CSS document.
+	</p>
+	<p align="center">
+		<img alt="Popup" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/popup.png" width="400" />
+	</p>
+	<p align="center">
+		<img alt="Popup" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/popup-confi-section.png" width="400" />
+	</p>
+</details>
 
-### Jekyll Themes
+### How to install it ?
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/clement-gaudiniere/librairie-cookie-consent/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+You can download the entire library in three different ways:
+- via the library-cookie-consent <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release page</a>. 
+- via NPM : `npm install librairie-cookie-consent`
+- via Bower : <em>Not yet available</em>
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### For more help, please consult our documentation
