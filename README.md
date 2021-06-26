@@ -2,6 +2,12 @@
 	<img alt="Logo de la librairie" src="https://raw.githubusercontent.com/clement-gaudiniere/librairie-cookie-consent/main/img/logo.png" width="200" />
 </p>
 
+
+<p align="center">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="cc by-nc-sa 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-525252.svg?labelColor=292929&logo=creative%20commons&style=for-the-badge" /></a>
+  <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/issues"><img alt="Issues" src="https://img.shields.io/github/issues/Omega-Numworks/Omega.svg?labelColor=292929&logo=git&style=for-the-badge" /></a>
+</p>
+
 # librairie-cookie-consent
 This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
