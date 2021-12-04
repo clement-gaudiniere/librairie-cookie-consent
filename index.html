@@ -59,23 +59,14 @@
 			let nbrAuth = cookieConsentOptions.authorization.length;
 
 			// On insère la base de notre popup
-			document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table><span id="contentPopupConsentQuestions"></span></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
+			document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
 
-
+			// On insère les champs personnalisés un à un
 			let i = 0;
 			while(i < nbrAuth){
-				$('#contentPopupConsentQuestions').before('<tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[i].textAuthorization+'</th></tr>')
+				$('#configureSection table').append('<tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[i].textAuthorization+'</th></tr>');
 				i++;
 			}
-			// while(findAutorization != true){
-			// 	if(isKeyExists(cookieConsentOptions.authorization[i], "textAuthorization") && isKeyExists(cookieConsentOptions.authorization[i], "nameCookieAuthorization")){
-			// 		console.log(cookieConsentOptions.authorization[i].textAuthorization);
-			// 	} else {
-			// 		let findAutorization = true;
-			// 	}
-			// 	i += 1;
-			// }
-
 
 		  //--------------Switch button-----------------
 	    $(".switch").click(function(){
@@ -138,16 +129,19 @@
 	        document.getElementById("backgroundPopup").classList.add('background-popup');
 	      }
 
-	      $(acceptButton).click(function() {
-	        $(popupConsent).fadeOut(1000);
-	        document.cookie = cookieConsentOptions['nameCookieAuthorization1']+'=true; path=/; expires=' + date;
-	        document.cookie = 'targetedAdvertising=true; path=/; expires=' + date;
-	        document.cookie = 'cookieConsent=true; path=/; expires=' + date;
-	        document.cookie = 'popupConsent=true; path=/; expires=' + date;
-	        document.getElementById("backgroundPopup").classList.remove('background-popup');
-	        (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
-	        (adsbygoogle = window.adsbygoogle || []).push({});
-	       });
+				// On configure le bouton "Accepter"
+				$(acceptButton).click(function() {
+					$(popupConsent).fadeOut(1000);
+					i = 0;
+					while(i < nbrAuth){
+						document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
+						i++;
+					}
+					// Facultatif :
+					// (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
+					// (adsbygoogle = window.adsbygoogle || []).push({});
+					document.getElementById("backgroundPopup").classList.remove('background-popup');
+				});
 
 	      $(configureButton).click(function() {
 	        $(configureButton).fadeOut(0);
