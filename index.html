@@ -137,9 +137,6 @@
 						document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
 						i++;
 					}
-					// Facultatif :
-					// (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
-					// (adsbygoogle = window.adsbygoogle || []).push({});
 					document.getElementById("backgroundPopup").classList.remove('background-popup');
 				});
 
@@ -152,58 +149,47 @@
 
 	      $(enregistreButton).click(function() {
 	        $(popupConsent).fadeOut(1000);
+					i = 0;
+					while(i < nbrAuth){
+						if(!$('#'+cookieConsentOptions.authorization[i].nameCookieAuthorization).hasClass('checked')){
+		          document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
+		        } else {
+							document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=false; path=/; expires=' + date;
+		        }
+						i++;
+					}
 	        document.getElementById("backgroundPopup").classList.remove('background-popup');
-	        // Insérer les cookies
-	        if(!$('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
-	        if(!$('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	          (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
-	        if(!$('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
 	        document.cookie = 'popupConsent=true; path=/; expires=' + date;
 	      });
 	    });
 		}
 
-	var cookieConsentOptions = {
-		// Cookie usage prevention text
-		textPopup: 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
-		// The text of the accept button
-		textButtonAccept : 'Accept all',
-		// The text of the configure my options button
-		textButtonConfigure : 'Configuring choices',
-		// The text of the save my options button
-		textButtonSave : 'Save choices',
-		// The text of the first parameter that the user can define in the "configuration" section.
-		authorization: [
-			{
-				textAuthorization: 'Allow access to geolocation data',
-				nameCookieAuthorization: 'autoriseGeolocation'
-			},
-			{
-				textAuthorization: 'Allow personalised ads and content, ad measurement and audience analysis',
-				nameCookieAuthorization: 'targetedAdvertising'
-			},
-			{
-				textAuthorization: 'Storing and/or accessing information on a device',
-				nameCookieAuthorization: 'cookieConsent'
-			}
-		]
-	}
-	popupConsent(cookieConsentOptions);
+		var cookieConsentOptions = {
+			// Cookie usage prevention text
+			textPopup: 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
+			// The text of the accept button
+			textButtonAccept : 'Accept all',
+			// The text of the configure my options button
+			textButtonConfigure : 'Configuring choices',
+			// The text of the save my options button
+			textButtonSave : 'Save choices',
+			// The text of the first parameter that the user can define in the "configuration" section.
+			authorization: [
+				{
+					textAuthorization: 'Allow access to geolocation data',
+					nameCookieAuthorization: 'autoriseGeolocation'
+				},
+				{
+					textAuthorization: 'Allow personalised ads and content, ad measurement and audience analysis',
+					nameCookieAuthorization: 'targetedAdvertising'
+				},
+				{
+					textAuthorization: 'Storing and/or accessing information on a device',
+					nameCookieAuthorization: 'cookieConsent'
+				}
+			]
+		}
+		popupConsent(cookieConsentOptions);
 
 	// var colors = ["Blue", "Red", "Orange", "Green"];
 
