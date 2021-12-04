@@ -4,78 +4,116 @@
 	<link rel="stylesheet" href="css/style.css">
 	<meta charset="utf-8">
 	<title>Array</title>
+	<style>
+		body {
+			background: whitesmoke;
+			height: 100vh;
+			background: url('images/hero_1.jpg');
+		}
+		section{
+			width: 1100px;
+	    max-width: 95%;
+	    margin: auto;
+	    display: block;
+	    height: 100%;
+	    display: flex;
+	    align-content: center;
+	    align-items: center;
+	    justify-content: center;
+		}
+		.container{
+			width: fit-content;
+	    background: transparent;
+	    backdrop-filter: blur(15px);
+	    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+	    border-radius: 12px;
+			display: flex;
+	    flex-direction: column;
+	    align-items: center;
+		}
+		.container p{
+			background: -webkit-linear-gradient(151deg, #ffe2bf, #f6b05a);
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+		}
+		.flex{
+			display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    align-content: center;
+	    justify-content: space-evenly;
+	    align-items: center;
+		}
+		#box img{
+			width: 250px;
+			padding: 15px;
+			max-width: 50%;
+		}
+		#box p{
+			margin-bottom: 1.5em;
+	    padding: 15px;
+	    width: 450px;
+	    max-width: 50%;
+		}
+		#restartPopup {
+	    color: white;
+	    background: transparent;
+	    border: 1px solid white;
+	    width: 150px;
+	    padding: 10px;
+	    border-radius: 8px;
+	    cursor: pointer;
+			margin: 20px;
+			transition: .15s ease-in-out;
+		}
+		#restartPopup:hover {
+			background: rgb(255 255 255 / 11%);
+		}
+		::-moz-selection {
+		  color: inherit;
+		  background: rgb(255 255 255 / 20%);
+		}
+
+		::selection {
+		  color: inherit;
+		  background: rgb(255 255 255 / 20%);
+		}
+	</style>
 </head>
 <body>
-	<script src="js/jquery.min.js"></script>
-
-	<!-- Ce que la librairie ajoute -->
-	<!-- <div class="popup" id="popupConsent">
-		<section id="contentPopupConsent">
-			<p>'+cookieConsentOptions["textPopup"]+'</p>
-		</section>
-		<section id="configureSection">
-			<table>
-				<tr>
-					<th>
-						<div class="switch checked" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'">
-							<div class="circle" id="'+cookieConsentOptions.authorization[0].nameCookieAuthorization+'Circle"></div>
-						</div>
-					</th>
-					<th class="text-switch">'+cookieConsentOptions.authorization[0].textAuthorization+'</th>
-				</tr>
-				<tr>
-					<th>
-						<div class="switch checked" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'">
-							<div class="circle" id="'+cookieConsentOptions.authorization[1].nameCookieAuthorization+'Circle"></div></div>
-						</th>
-						<th class="text-switch">'+cookieConsentOptions.authorization[1].textAuthorization+'</th>
-					</tr>
-					<tr>
-						<th>
-							<div class="switch checked" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'">
-								<div class="circle" id="'+cookieConsentOptions.authorization[2].nameCookieAuthorization+'Circle"></div>
-							</div>
-						</th>
-						<th class="text-switch">'+cookieConsentOptions.authorization[2].textAuthorization+'</th>
-					</tr>
-				</table>
-			</section>
-			<div class="choice-container-buttons">
-				<button class="c-button" id="accept">
-				<div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button>
-				<button class="c-button" id="configure">
-				<div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button>
-				<button class="c-button" id="enregistre">
-				<div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button>
+	<section>
+		<div class="container">
+			<div class="flex" id="box">
+				<img src="images/logo.png" alt="Logo">
+				<p>You are currently on the presentation page, if you want to restart the popup, you can click on the button below.</p>
 			</div>
+			<button type="button" name="restartPopup" id="restartPopup">Restart popup</button>
 		</div>
-		<div id="backgroundPopup"></div> -->
-<script>
-		function isKeyExists(obj,key){
-		  return obj.hasOwnProperty(key);
-		}
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	// On re-affiche la popup lors de la demande de l'utilisateur
+	$('#restartPopup').click(function(e){
+		e.preventDefault();
+		$('#popupConsent').css('display','block');
+		document.getElementById("backgroundPopup").classList.add('background-popup');
+	});
+
+	</script>
+	<script>
 		function popupConsent(cookieConsentOptions) {
 			// On compte le nombre d'autorisations :
 			let nbrAuth = cookieConsentOptions.authorization.length;
 
 			// On insère la base de notre popup
-			document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table><span id="contentPopupConsentQuestions"></span></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
+			document.body.insertAdjacentHTML('beforeEnd','<div class="popup" id="popupConsent"><section id="contentPopupConsent"><p>'+cookieConsentOptions["textPopup"]+'</p></section><section id="configureSection"><table></table></section><div class="choice-container-buttons"><button class="c-button" id="accept"><div class="c-ripple js-ripple"><span class="c-ripple-circle-accept"></span></div>'+cookieConsentOptions["textButtonAccept"]+'</button><button class="c-button" id="configure"><div class="c-ripple js-ripple"><span class="c-ripple-circle-configure"></span></div>'+cookieConsentOptions["textButtonConfigure"]+'</button><button class="c-button" id="enregistre"><div class="c-ripple js-ripple"><span class="c-ripple-circle-enregistre"></span></div>'+cookieConsentOptions["textButtonSave"]+'</button></div></div><div id="backgroundPopup"></div>');
 
-
+			// On insère les champs personnalisés un à un
 			let i = 0;
 			while(i < nbrAuth){
-				$('#contentPopupConsentQuestions').before('<tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[i].textAuthorization+'</th></tr>')
+				$('#configureSection table').append('<tr><th><div class="switch checked" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'"><div class="circle" id="'+cookieConsentOptions.authorization[i].nameCookieAuthorization+'Circle"></div></div></th><th class="text-switch">'+cookieConsentOptions.authorization[i].textAuthorization+'</th></tr>');
 				i++;
 			}
-			// while(findAutorization != true){
-			// 	if(isKeyExists(cookieConsentOptions.authorization[i], "textAuthorization") && isKeyExists(cookieConsentOptions.authorization[i], "nameCookieAuthorization")){
-			// 		console.log(cookieConsentOptions.authorization[i].textAuthorization);
-			// 	} else {
-			// 		let findAutorization = true;
-			// 	}
-			// 	i += 1;
-			// }
-
 
 		  //--------------Switch button-----------------
 	    $(".switch").click(function(){
@@ -138,16 +176,17 @@
 	        document.getElementById("backgroundPopup").classList.add('background-popup');
 	      }
 
-	      $(acceptButton).click(function() {
-	        $(popupConsent).fadeOut(1000);
-	        document.cookie = cookieConsentOptions['nameCookieAuthorization1']+'=true; path=/; expires=' + date;
-	        document.cookie = 'targetedAdvertising=true; path=/; expires=' + date;
-	        document.cookie = 'cookieConsent=true; path=/; expires=' + date;
-	        document.cookie = 'popupConsent=true; path=/; expires=' + date;
-	        document.getElementById("backgroundPopup").classList.remove('background-popup');
-	        (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
-	        (adsbygoogle = window.adsbygoogle || []).push({});
-	       });
+				// On configure le bouton "Accepter"
+				$(acceptButton).click(function() {
+					$(popupConsent).fadeOut(1000);
+					i = 0;
+					while(i < nbrAuth){
+						document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
+						i++;
+					}
+					document.getElementById("backgroundPopup").classList.remove('background-popup');
+					document.cookie = 'popupConsent=true; path=/; expires=' + date;
+				});
 
 	      $(configureButton).click(function() {
 	        $(configureButton).fadeOut(0);
@@ -158,67 +197,47 @@
 
 	      $(enregistreButton).click(function() {
 	        $(popupConsent).fadeOut(1000);
+					i = 0;
+					while(i < nbrAuth){
+						if($('#'+cookieConsentOptions.authorization[i].nameCookieAuthorization).hasClass('checked')){
+		          document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
+		        } else {
+							document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=false; path=/; expires=' + date;
+		        }
+						i++;
+					}
 	        document.getElementById("backgroundPopup").classList.remove('background-popup');
-	        // Insérer les cookies
-	        if(!$('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[0].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[0].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
-	        if(!$('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	          (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[1].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[1].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
-	        if(!$('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=false; path=/; expires=' + date;
-	        }
-	        if($('#'+cookieConsentOptions.authorization[2].nameCookieAuthorization).hasClass('checked')){
-	          document.cookie = cookieConsentOptions.authorization[2].nameCookieAuthorization+'=true; path=/; expires=' + date;
-	        }
-	        document.cookie = 'popupConsent=true; path=/; expires=' + date;
+					document.cookie = 'popupConsent=true; path=/; expires=' + date;
 	      });
 	    });
 		}
 
-	var cookieConsentOptions = {
-		// Cookie usage prevention text
-		textPopup: 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
-		// The text of the accept button
-		textButtonAccept : 'Accept all',
-		// The text of the configure my options button
-		textButtonConfigure : 'Configuring choices',
-		// The text of the save my options button
-		textButtonSave : 'Save choices',
-		// The text of the first parameter that the user can define in the "configuration" section.
-		authorization: [
-			{
-				textAuthorization: 'Allow access to geolocation data',
-				nameCookieAuthorization: 'autoriseGeolocation'
-			},
-			{
-				textAuthorization: 'Allow personalised ads and content, ad measurement and audience analysis',
-				nameCookieAuthorization: 'targetedAdvertising'
-			},
-			{
-				textAuthorization: 'Storing and/or accessing information on a device',
-				nameCookieAuthorization: 'cookieConsent'
-			}
-		]
-	}
-	popupConsent(cookieConsentOptions);
-
-	// var colors = ["Blue", "Red", "Orange", "Green"];
-
-	// Vérifie si la valeur existe dans le tableau
-	// if(cookieConsentOptions.indexOf("textAuthorization1") !== 0){
-	// 	alert("La valeur existe!")
-	// } else{
-	// 	alert("La valeur n'existe pas!")
-	// }
+		var cookieConsentOptions = {
+			// Cookie usage prevention text
+			textPopup: 'We use cookies/targeted advertising to ensure you have the best experience on our site. If you continue to use our site, we will assume that you agree to their use. For more information, please see our <a href="#">privacy policy</a>.',
+			// The text of the accept button
+			textButtonAccept : 'Accept all',
+			// The text of the configure my options button
+			textButtonConfigure : 'Configuring choices',
+			// The text of the save my options button
+			textButtonSave : 'Save choices',
+			// The text of the first parameter that the user can define in the "configuration" section.
+			authorization: [
+				{
+					textAuthorization: 'Allow access to geolocation data',
+					nameCookieAuthorization: 'autoriseGeolocation'
+				},
+				{
+					textAuthorization: 'Allow personalised ads and content, ad measurement and audience analysis',
+					nameCookieAuthorization: 'targetedAdvertising'
+				},
+				{
+					textAuthorization: 'Storing and/or accessing information on a device',
+					nameCookieAuthorization: 'cookieConsent'
+				}
+			]
+		}
+		popupConsent(cookieConsentOptions);
 	</script>
 </body>
 </html>
