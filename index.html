@@ -151,7 +151,7 @@
 	        $(popupConsent).fadeOut(1000);
 					i = 0;
 					while(i < nbrAuth){
-						if(!$('#'+cookieConsentOptions.authorization[i].nameCookieAuthorization).hasClass('checked')){
+						if($('#'+cookieConsentOptions.authorization[i].nameCookieAuthorization).hasClass('checked')){
 		          document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=true; path=/; expires=' + date;
 		        } else {
 							document.cookie = cookieConsentOptions.authorization[i].nameCookieAuthorization+'=false; path=/; expires=' + date;
