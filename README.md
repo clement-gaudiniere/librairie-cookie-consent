@@ -14,6 +14,8 @@
 </p>
 
 # librairie-cookie-consent
+Because the users' agreement counts.
+
 This easy-to-use library allows you to ask your users for feedback on various parameters that can be set directly in the code. For more information, see the README documentation. IMPORTANT NOTE: for use with jQuery.
 
 [Demo](https://clement-gaudiniere.github.io/librairie-cookie-consent/)
