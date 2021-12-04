@@ -21,11 +21,6 @@ This easy-to-use library allows you to ask your users for feedback on various pa
 [Demo](https://clement-gaudiniere.github.io/librairie-cookie-consent/)
 
 
-
-```
-In development, your contributions are welcome
-```
-
 <details>
   <summary><b>Exemple</b></summary>
 	<p>If you want to see the result directly, download the latest <a href="https://github.com/clement-gaudiniere/librairie-cookie-consent/releases">release</a>, and go to the Example folder. Then run the index.html file. You can see below the popup of the library, below, of course, the style is fully configurable in the CSS document.
