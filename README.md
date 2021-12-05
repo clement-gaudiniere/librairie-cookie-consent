@@ -69,8 +69,9 @@ var cookieConsentOptions = {
 	textButtonConfigure : 'Configuring choices',
 	// The text of the save my options button
 	textButtonSave : 'Save choices',
-	// The text of the first parameter that the user can define in the "configuration" section.
+	// You can add as many permissions as you like. These permissions can be set in the "configuration" section.
 	authorization: [
+		// For each authorisation, you must specify its text and the name of its cookie.
 		{
 			textAuthorization: 'Allow access to geolocation data',
 			nameCookieAuthorization: 'autoriseGeolocation'
