@@ -89,4 +89,5 @@ var cookieConsentOptions = {
 popupConsent(cookieConsentOptions);
 ```
 
+But how to recover the user's choices? You will see, it's quite simple. The cookie names you specify are stored in the user's browser. If he has accepted all cookies, all cookies will be set to "true". If the user refuses some choices, the cookie will be set to "false".
 
